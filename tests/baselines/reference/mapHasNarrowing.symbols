@@ -1,0 +1,27 @@
+=== tests/cases/compiler/mapHasNarrowing.ts ===
+const narrowingMap = new Map<string, number>();
+>narrowingMap : Symbol(narrowingMap, Decl(mapHasNarrowing.ts, 0, 5))
+>Map : Symbol(Map, Decl(lib.es2015.collection.d.ts, --, --), Decl(lib.es2015.collection.d.ts, --, --), Decl(lib.es2015.iterable.d.ts, --, --), Decl(lib.es2015.symbol.wellknown.d.ts, --, --))
+
+const key = 'one';
+>key : Symbol(key, Decl(mapHasNarrowing.ts, 2, 5))
+
+narrowingMap.set(key, 1);
+>narrowingMap.set : Symbol(Map.set, Decl(lib.es2015.collection.d.ts, --, --))
+>narrowingMap : Symbol(narrowingMap, Decl(mapHasNarrowing.ts, 0, 5))
+>set : Symbol(Map.set, Decl(lib.es2015.collection.d.ts, --, --))
+>key : Symbol(key, Decl(mapHasNarrowing.ts, 2, 5))
+
+if(narrowingMap.has(key)){
+>narrowingMap.has : Symbol(Map.has, Decl(lib.es2015.collection.d.ts, --, --))
+>narrowingMap : Symbol(narrowingMap, Decl(mapHasNarrowing.ts, 0, 5))
+>has : Symbol(Map.has, Decl(lib.es2015.collection.d.ts, --, --))
+>key : Symbol(key, Decl(mapHasNarrowing.ts, 2, 5))
+
+    let n = narrowingMap.get(key);
+>n : Symbol(n, Decl(mapHasNarrowing.ts, 6, 7))
+>narrowingMap.get : Symbol(Map.get, Decl(lib.es2015.collection.d.ts, --, --))
+>narrowingMap : Symbol(narrowingMap, Decl(mapHasNarrowing.ts, 0, 5))
+>get : Symbol(Map.get, Decl(lib.es2015.collection.d.ts, --, --))
+>key : Symbol(key, Decl(mapHasNarrowing.ts, 2, 5))
+} 

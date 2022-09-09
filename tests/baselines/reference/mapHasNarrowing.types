@@ -1,0 +1,33 @@
+=== tests/cases/compiler/mapHasNarrowing.ts ===
+const narrowingMap = new Map<string, number>();
+>narrowingMap : Map<string, number>
+>new Map<string, number>() : Map<string, number>
+>Map : MapConstructor
+
+const key = 'one';
+>key : "one"
+>'one' : "one"
+
+narrowingMap.set(key, 1);
+>narrowingMap.set(key, 1) : Map<string, number>
+>narrowingMap.set : (key: string, value: number) => Map<string, number>
+>narrowingMap : Map<string, number>
+>set : (key: string, value: number) => Map<string, number>
+>key : "one"
+>1 : 1
+
+if(narrowingMap.has(key)){
+>narrowingMap.has(key) : boolean
+>narrowingMap.has : (key: string) => boolean
+>narrowingMap : Map<string, number>
+>has : (key: string) => boolean
+>key : "one"
+
+    let n = narrowingMap.get(key);
+>n : number
+>narrowingMap.get(key) : number
+>narrowingMap.get : (key: string) => number | undefined
+>narrowingMap : Map<string, number>
+>get : (key: string) => number | undefined
+>key : "one"
+} 
